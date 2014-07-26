@@ -24,21 +24,12 @@
 				</div>
 				<div id = "fault">
 				<h3> Well Status </h3>
-                    <?php
-                        echo "Operational";
-                    ?>
 				</div>
 				<div id = "level">
 				<h3> Tank Battery Volume </h3>
-                    <?php
-                        echo "74 Gallons";
-                    ?>
 				</div>
 				<div id = "config">
 				<h3> Well Configuration </h3>
-                    <?php
-                        echo "Click Here to Change Parameters";
-                    ?>
 				</div>
 			</div>
 				<div id = "footer">
