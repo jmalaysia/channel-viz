@@ -1,34 +1,7 @@
 <!DOCTYPE html/>
 
 <html>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
-<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>  
-<script>
-    
-    xively.setKey("C232AzmuS2PABtpPq9ANFJyq2xALpK8HX1BX94ESPcug9wt6" );  
-// Make sure the document is ready to be handled  
-$(document).ready(function($) {  
-  
-  // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)  
-  xively.setKey( "C232AzmuS2PABtpPq9ANFJyq2xALpK8HX1BX94ESPcug9wt6" );  
-  
-  // Replace with your own values  
-  var feedID        = 1242933086,          // Feed ID  
-      datastreamID  = "Depth";       // Datastream ID  
-      selector      = "#myelement";   // Your element on the page  
-  
-  // Get datastream data from Xively  
-  xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
-    // WARNING: This code is only executed when we get a response back from Xively,   
-    // it will likely execute after the rest your script  
-    //  
-    // NOTE: The variable "datastream" will contain all the Datastream information   
-    // as an object. The structure of Datastream objects can be found at:   
-    // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
-  
-    // Display the current value from the datastream  
-    $(selector).html( datastream["current_value"] );  
-    </script> 
+   
 
 	<head> 
 		<title>Underwood Oil</title>
@@ -65,6 +38,35 @@ $(document).ready(function($) {
                 <h3>hudsoncontrols@gmail.com</h3>
 				</div>
 		</div>
+		
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>  
+<script>
+    
+    xively.setKey("C232AzmuS2PABtpPq9ANFJyq2xALpK8HX1BX94ESPcug9wt6" );  
+// Make sure the document is ready to be handled  
+$(document).ready(function($) {  
+  
+  // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)  
+  xively.setKey( "C232AzmuS2PABtpPq9ANFJyq2xALpK8HX1BX94ESPcug9wt6" );  
+  
+  // Replace with your own values  
+  var feedID        = 1242933086,          // Feed ID  
+      datastreamID  = "Depth";       // Datastream ID  
+      selector      = "#myelement";   // Your element on the page  
+  
+  // Get datastream data from Xively  
+  xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
+    // WARNING: This code is only executed when we get a response back from Xively,   
+    // it will likely execute after the rest your script  
+    //  
+    // NOTE: The variable "datastream" will contain all the Datastream information   
+    // as an object. The structure of Datastream objects can be found at:   
+    // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
+  
+    // Display the current value from the datastream  
+    $(selector).html( datastream["current_value"] );  
+    </script> 
+    
 	</body>
-</script>    
 </html>
