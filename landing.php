@@ -1,4 +1,4 @@
-<?php ob_start();?>
+
 
 <!DOCTYPE html/>
 
@@ -53,4 +53,4 @@
 	</body>
     
 </html>
-<?php ob_flush();?>
+
