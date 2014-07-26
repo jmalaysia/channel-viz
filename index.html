@@ -1,0 +1,71 @@
+<!DOCTYPE html/>
+
+<html>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>  
+<script>
+    
+    xively.setKey("C232AzmuS2PABtpPq9ANFJyq2xALpK8HX1BX94ESPcug9wt6" );  
+// Make sure the document is ready to be handled  
+$(document).ready(function($) {  
+  
+  // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)  
+  xively.setKey( "C232AzmuS2PABtpPq9ANFJyq2xALpK8HX1BX94ESPcug9wt6" );  
+  
+  // Replace with your own values  
+  var feedID        = 1242933086,          // Feed ID  
+      datastreamID  = "Depth";       // Datastream ID  
+      selector      = "#myelement";   // Your element on the page  
+  
+  // Get datastream data from Xively  
+  xively.datastream.get (feedID, datastreamID, function ( datastream ) {  
+    // WARNING: This code is only executed when we get a response back from Xively,   
+    // it will likely execute after the rest your script  
+    //  
+    // NOTE: The variable "datastream" will contain all the Datastream information   
+    // as an object. The structure of Datastream objects can be found at:   
+    // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream  
+  
+    // Display the current value from the datastream  
+    $(selector).html( datastream["current_value"] );  
+  
+
+    
+	<head> 
+		<title>Underwood Oil</title>
+		<link rel="stylesheet" type "text/css" href="style.css" />
+	</head>
+	
+	<body>
+		<div id = "container">
+			<div id = "header">
+				<h1> Underwood Oil Dipper </h1>
+			</div>
+			<div id = "content">
+				<div id = "nav">
+				<h3> FIELDS </h3>
+					<ul>
+						<li> <a class="selected" href="well1"> Underwood A </a></li>
+						<li> <a class="selected" href="well2"> Underwood </a></li>
+						<li> <a class="selected" href="well3"> Bert Poteet </a></li>
+						<li> <a class="selected" href="well4"> Houchens </a></li>
+					</ul>
+				</div>
+				<div id = "fault">
+				<h3> Well Status </h3>
+				</div>
+				<div id = "level">
+				<h3> Tank Battery Volume </h3>
+				</div>
+				<div id = "config">
+				<h3> Well Configuration </h3>
+				</div>
+			</div>
+				<div id = "footer">
+				<h3> Copyright &copy; 2014 John Hudson </h3>
+                <h3>hudsoncontrols@gmail.com</h3>
+				</div>
+		</div>
+	</body>
+</script>    
+</html>
