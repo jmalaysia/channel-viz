@@ -52,12 +52,12 @@
 
 
         // Display the current value from the datastream
-        $(selector).html( datastream["current_value"] );
+        $(#depth).html( datastream["current_value"] );
 
         // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           // Display the current value from the updated datastream
-          $(selector).html( datastream_updated["current_value"] );
+          $(depth).html( datastream_updated["current_value"] );
         });
 
       });
