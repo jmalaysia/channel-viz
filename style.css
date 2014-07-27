@@ -45,6 +45,7 @@ a {
 #fault, #level, #config {
 	width: 85%; height: 135px;
 	float: right;
+	text-align: center;
 	}
 	
 #footer {
