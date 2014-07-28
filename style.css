@@ -47,6 +47,12 @@ a {
 	float: right;
 	text-align: center;
 	}
+
+#graph {
+	width: 85%; height: 270px;
+	float: right;
+	text-align: center;
+}
 	
 #footer {
 	clear: both;
