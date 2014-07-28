@@ -34,14 +34,14 @@
 					</ul>
 				</div>
 				<div id ="fault">
-				<h3> Well Status </h3>
-				<h2><small>Depth</small> <span id="depth"></span></h2>
+				<h3> </h3>
 				</div>
 				<div id ="level">
-				<h3> Tank Battery Volume </h3>
+				<h3> Tank Battery Capacity: 500 Gallons </h3>
+				<h3> Current Volume: <span id="volume"></span> Gallons</h3>
 				</div>
 				<div id ="config">
-				<h3> Well Configuration </h3>
+				<h3> </h3>
 				</div>
 			</div>
 				<div id ="footer">
@@ -73,8 +73,8 @@
 
       // Replace with your own values
       var feedID        = 2022794478,          // Feed ID (the last number on the URL on the feed page on Xively)
-          datastreamID  = "Depth";       // Datastream ID
-          selector      = "#depth";   // Your element on the page - takes any valid jQuery selector
+          datastreamID  = "Volume";       // Datastream ID
+          selector      = "#volume";   // Your element on the page - takes any valid jQuery selector
           
 
 
@@ -94,8 +94,8 @@
 
 
         // Display the current value from the datastream
-        $(depth).html( datastream["current_value"] );
-         $(volume).html( datastream["current_value"] );
+        $(volume).html( datastream["current_value"] );
+         
 
 
 
@@ -103,8 +103,8 @@
         // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           // Display the current value from the updated datastream
-          $(depth).html( datastream_updated["current_value"] );
           $(volume).html( datastream_updated["current_value"] );
+         
         });
 
 
