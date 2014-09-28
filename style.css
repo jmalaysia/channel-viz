@@ -51,12 +51,13 @@ a {
 #welldiv {
 	width: 85%; height: 405px;
 	float: right;
-	text-align: left;
+	text-align: center;
 }
 
 #welldiv ul {
 	list-style-type:none;
 	padding:0;
+	text-align: left;
 	margin-left:10em;
 }
 	
