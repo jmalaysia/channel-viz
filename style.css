@@ -57,7 +57,8 @@ a {
 #welldiv ul {
 	list-style-type:none;
 	padding:0;
-	text-align: center;
+	text-align: left;
+	margin-left: 20em;
 }
 
 #welldiv li {
