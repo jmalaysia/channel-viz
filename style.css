@@ -58,6 +58,9 @@ a {
 	list-style-type:none;
 	padding:0;
 	text-align: right;
+}
+
+#welldiv li {
 	margin: 1em 0;
 }
 	
