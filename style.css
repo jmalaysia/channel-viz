@@ -53,6 +53,11 @@ a {
 	float: right;
 	text-align: center;
 }
+
+#welldiv ul {
+	list-style-type:none;
+	padding:0;
+}
 	
 #footer {
 	clear: both;
