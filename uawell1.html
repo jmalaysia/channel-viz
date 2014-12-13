@@ -51,7 +51,7 @@
 					<li>FAULTS:</li>
 					<li>CYCLES PER DAY:</li>
 					<li>ENTER NEW CYCLES PER DAY:</li>
-					<li>CURRENT MAX DEPTH:</li>
+					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="depth"></span>Feet</li>
 					<li>ENTER NEW MAX DEPTH:</li>
 					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="volume"></span> Gallons</li>
 					<li>DUMP VOLUME LAST 24 HOURS:</li>
@@ -110,6 +110,7 @@
 
         // Display the current value from the datastream
         $(volume).html( datastream["current_value"] );
+        $(depth).html( datastream["current_value"] );
          
 
 
@@ -119,6 +120,7 @@
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           // Display the current value from the updated datastream
           $(volume).html( datastream_updated["current_value"] );
+          $(depth).html( datastream_updated["current_value"] );
          
         });
 
