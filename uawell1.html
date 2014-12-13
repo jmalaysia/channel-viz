@@ -1,0 +1,107 @@
+<!doctype html>
+
+
+<html lang=en>
+   
+
+
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Underwood Oil</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+
+	<body>
+		<div id ="container">
+			<div id ="header">
+				<h1> Underwood A Well 2 </h1>
+			</div>
+			<div id ="content">
+				<div id ="nav">
+				<h3> FIELDS </h3>
+					<ul>
+						<li> <a class="selected" href="uawell1.html"> Well 1 </a></li>
+						<li> <a class="selected" href="uawell2.html"> Well 2 </a></li>
+						<li> <a class="selected" href="uawell3.html"> Well 3 </a></li>
+						<li> <a class="selected" href="uawell4.html"> Well 4 </a></li>
+						<li> <a class="selected" href="uawell5.html"> Well 5 </a></li>
+						<li> <a class="selected" href="uawell6.html"> Well 6 </a></li>
+						<li> <a class="selected" href="uawell7.html"> Well 7 </a></li>
+						<li> <a class="selected" href="index.html"> Lease Menu </a></li>			
+
+					</ul>
+				</div>
+				<div id ="welldiv">
+				<h5>
+				<button style="font: bold 20px Arial;background-color:lightgreen;width:65;height:65" onClick="wellinput()"><b>START WELL</b></button>
+				<button style="font: bold 20px Arial;background-color:yellow;width:65;height:65" onClick="wellinput()"><b>PARK WELL</b></button>
+				<button style="font: bold 20px Arial;background-color:red;width:65;height:65" onClick="wellinput()"><b>EMERGENCY STOP</b></button>
+				</h5>
+				<p id="demo"></p>
+
+				<script>
+				function wellinput() {
+    				document.getElementById("demo").innerHTML = "PARKED";
+				}
+				</script>
+				<ul>
+					<li>WELL STATUS:</li>
+					<li>FAULTS:</li>
+					<li>CYCLES PER DAY:</li>
+					<li>ENTER NEW CYCLES PER DAY:</li>
+					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="depth"></span> Feet</li>
+					<li>ENTER NEW MAX DEPTH:</li>
+					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="volume"></span> Gallons</li>
+					<li>DUMP VOLUME LAST 24 HOURS:</li>
+					<li>DUMP VOLUME LAST 7 DAYS:</li>
+				</ul>
+				</div>
+			</div>
+				<div id ="footer">
+				<h3> Copyright &copy; 2014 John Hudson </h3>
+                <a href="mailto:hudsoncontrols@gmail.com">hudsoncontrols@gmail.com</a> 
+				</div>
+		</div>
+ <!-- Include jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <!-- Include XivelyJS -->
+  <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
+  <!-- Our Script (should be included in a separate file, only inline for demo purposes) -->
+  <script>
+    // Make sure the document is ready to be handled
+    $(document).ready(function($) {
+      // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)
+      xively.setKey( "ME6ZkNhr245kVVn5I2Rf7wefpMAxDU9BosYYev4QSN8kj40B" );
+      // Replace with your own values
+      var feedID        = 2022794478,          // Feed ID (the last number on the URL on the feed page on Xively)
+          datastreamID  = "Volume";       // Datastream ID
+          selector      = "#volume";   // Your element on the page - takes any valid jQuery selector
+          
+      // Get datastream data from Xively
+      xively.datastream.get (feedID, datastreamID, function ( datastream ) {
+        // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
+        // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
+        // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
+        // Display the current value from the datastream
+        $(volume).html( datastream["current_value"] );
+        $(depth).html( datastream["current_value"] );
+         
+        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
+        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
+          // Display the current value from the updated datastream
+          $(volume).html( datastream_updated["current_value"] );
+          $(depth).html( datastream_updated["current_value"] );
+         
+        });
+      });
+      // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
+    });
+  </script>
+
+
+
+
+	</body>
+</html>
