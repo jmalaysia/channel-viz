@@ -96,12 +96,13 @@
 
 
       // Get datastream data from Xively
-      xively.feed.get (feedID, function ( datastream ) {
+     // xively.feed.get (feedID, function ( datastream ) {
+     xively.feed.get(feedID, callback(data)) 
         // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
         // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
         // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
 
-
+feed.datastreams[0];
 
 
 
@@ -127,7 +128,7 @@
 
 
 
-      });
+      //});
 
 
 
