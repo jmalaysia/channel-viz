@@ -127,7 +127,8 @@
         xively.datastream.subscribe( feedID, "dump24", function ( event , datastream_updated ) {
          $(dump24).html( datastream_updated["current_value"] );
         });
-      }); 
+      });
+     xively.datastream.update(feedID, "maxdepth", {current_value: "255"}, function(data)
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
   </script>
