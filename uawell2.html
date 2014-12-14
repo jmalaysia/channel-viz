@@ -104,7 +104,7 @@
         });
       });
      xively.datastream.get (feedID, "dailycycles", function ( datastream ) {
-        $(dailysysles).html( datastream["current_value"] );
+        $(dailycycles).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "dailycycles", function ( event , datastream_updated ) {
          $(dailycycles).html( datastream_updated["current_value"] );
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
