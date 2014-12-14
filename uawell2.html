@@ -102,7 +102,9 @@
         // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
         // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
 
-feed.datastreams[0];
+obj = JSON.parse(text);
+document.getElementById("depth").innerHTML =
+obj.datastreams[0].id;
 
 
 
@@ -110,8 +112,8 @@ feed.datastreams[0];
 
 
         // Display the current value from the datastream
-        $(volume).html( datastream["current_value"] );
-        $(depth).html( datastream["current_value"] );
+       // $(volume).html( datastream["current_value"] );
+       // $(depth).html( datastream["current_value"] );
          
 
 
