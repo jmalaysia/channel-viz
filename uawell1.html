@@ -80,7 +80,7 @@
           selector      = "#volume";   // Your element on the page - takes any valid jQuery selector
           
       // Get datastream data from Xively
-      xively.datastream.get (feedID, volume, function ( datastream ) {
+      xively.datastream.get (feedID, Volume, function ( datastream ) {
         // WARNING: This code is only executed when we get a response back from Xively, it will likely execute after the rest your script
         // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
         // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
