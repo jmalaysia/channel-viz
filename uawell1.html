@@ -84,7 +84,7 @@
         $(depth).html( datastream["current_value"] );
          
         // Realtime datastream update
-        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
+        xively.datastream.subscribe( feedID, "Volume", function ( event , datastream_updated ) {
           
           $(volume).html( datastream_updated["current_value"] );
           $(depth).html( datastream_updated["current_value"] );
