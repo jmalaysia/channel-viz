@@ -97,7 +97,7 @@
         });
       });
     xively.datastream.get (feedID, "Total_Oil", function ( datastream ) {
-        $(depth).html( datastream["current_value"] );
+        $(total_oil).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "Total_Oil", function ( event , datastream_updated ) {
          $(total_oil).html( datastream_updated["current_value"] );
          
