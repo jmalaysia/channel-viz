@@ -46,16 +46,17 @@
     				document.getElementById("demo").innerHTML = "PARKED";
 				}
 				</script>
+				<p span id="demo"></p>
 				<ul>
-					<li>WELL STATUS:&nbsp;&nbsp;<span id="demo"></span></span></li>
-					<li>FAULTS:</li>
+					<li>WELL STATUS:&nbsp;&nbsp;<span id="wellstatus"></span></li>
+					<li>FAULTS:&nbsp;&nbsp;<span id="faults"></span></li>
 					<li>CYCLES PER DAY:&nbsp;&nbsp;<span id="dailycycles"></span></li>
 					<li>ENTER NEW CYCLES PER DAY:</li>
 					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="maxdepth"></span> Feet</li>
 					<li>ENTER NEW MAX DEPTH:</li>
 					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="total_oil"></span> Gallons</li>
 					<li>DUMP VOLUME LAST 24 HOURS:&nbsp;&nbsp;<span id="volume"></span> Gallons</li>
-					<li>DUMP VOLUME LAST 7 DAYS:</li>
+					<li>DUMP VOLUME LAST 7 DAYS:&nbsp;&nbsp;<span id="dump24"></span></li>
 				</ul>
 				</div>
 			</div>
@@ -107,6 +108,24 @@
         $(dailycycles).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "dailycycles", function ( event , datastream_updated ) {
          $(dailycycles).html( datastream_updated["current_value"] );
+        });
+      });
+      xively.datastream.get (feedID, "wellstatus", function ( datastream ) {
+        $(wellstatus).html( datastream["current_value"] );
+        xively.datastream.subscribe( feedID, "wellstatus", function ( event , datastream_updated ) {
+         $(wellstatus).html( datastream_updated["current_value"] );
+        });
+      });
+      xively.datastream.get (feedID, "faults", function ( datastream ) {
+        $(faults).html( datastream["current_value"] );
+        xively.datastream.subscribe( feedID, "faults", function ( event , datastream_updated ) {
+         $(faults).html( datastream_updated["current_value"] );
+        });
+      });
+      xively.datastream.get (feedID, "dump24", function ( datastream ) {
+        $(dump24).html( datastream["current_value"] );
+        xively.datastream.subscribe( feedID, "dump24", function ( event , datastream_updated ) {
+         $(dump24).html( datastream_updated["current_value"] );
         });
       }); 
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
