@@ -102,7 +102,7 @@
         // NOTE: The variable "datastream" will contain all the Datastream information as an object. The structure of Datastream objects can be found at: 
         // https://xively.com/dev/docs/api/quick_reference/api_resource_attributes/#datastream
 
-obj = JSON.parse(text);
+obj = JSON.parse(data);
 document.getElementById("depth").innerHTML =
 obj.datastreams[0].id;
 
