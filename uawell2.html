@@ -53,8 +53,8 @@
 					<li>ENTER NEW CYCLES PER DAY:</li>
 					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="depth"></span> Feet</li>
 					<li>ENTER NEW MAX DEPTH:</li>
-					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="volume"></span> Gallons</li>
-					<li>DUMP VOLUME LAST 24 HOURS:</li>
+					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="total_oil"></span> Gallons</li>
+					<li>DUMP VOLUME LAST 24 HOURS:&nbsp;&nbsp;<span id="volume"></span> Gallons</li>
 					<li>DUMP VOLUME LAST 7 DAYS:</li>
 				</ul>
 				</div>
@@ -93,6 +93,13 @@
         $(depth).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "Depth", function ( event , datastream_updated ) {
          $(depth).html( datastream_updated["current_value"] );
+         
+        });
+      });
+    xively.datastream.get (feedID, "Total_Oil", function ( datastream ) {
+        $(depth).html( datastream["current_value"] );
+        xively.datastream.subscribe( feedID, "Total_Oil", function ( event , datastream_updated ) {
+         $(total_oil).html( datastream_updated["current_value"] );
          
         });
       });    
