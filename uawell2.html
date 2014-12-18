@@ -131,7 +131,7 @@
     //PUT https://api.xively.com/v2/feeds/2022794475.json
      function myFunction()
   {
-    xively.datastream.update(feedID, "dump24", {current_value: "5000"}, function(data){ alert("channel updated");})
+    xively.datastream.update(feedID, "Volume", {current_value: "5000"}, function(data){ alert("channel updated");})
   }
     //{"version":"1.0.0",
     //"datastreams":[{
