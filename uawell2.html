@@ -126,7 +126,10 @@
       });
       function myFunction()
   {
-    xively.datastream.update(feedID, "Volume", {current_value: "5000"}, function(data){ alert("channel updated");})
+    xively.datastream.update(feedID, "Volume", function (datastream) {
+    	$(Volume).html(datastream_updated["5000"] );
+    });
+    }
   }
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
