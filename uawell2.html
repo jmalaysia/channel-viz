@@ -134,7 +134,7 @@
          };
 
          // upload the data
-         xively.feed.update(FEED_ID, data, function(response) {
+         xively.feed.update(feedID, data, function(response) {
             if (response.status == "200") {
                console.log("Yay, it worked!: " + JSON.stringify(response, null, 3));
             }
