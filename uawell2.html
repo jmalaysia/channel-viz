@@ -132,14 +132,15 @@
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
     //xively.datastream.update (feedID, maxdepth, data{newmaxdepth});
-    PUT https://api.xively.com/v2/feeds/2022794475.json
-    {"version":"1.0.0",
-    "datastreams":[{
-    "id":"maxdepth",
-    "current_value":"1000"
-    }
-    ]
-    }
+    //PUT https://api.xively.com/v2/feeds/2022794475.json
+    xively.datastream.update(feedID, "maxdepth", {current_value: "255"}, function(data){ alert("channel updated");})
+    //{"version":"1.0.0",
+    //"datastreams":[{
+    //"id":"maxdepth",
+    //"current_value":"1000"
+    //}
+    //]
+    //}
     //xively.datastream.update(feedID,"maxdepth", data{newmaxdepth});
   </script>
 
