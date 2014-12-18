@@ -124,15 +124,15 @@
          $(dump24).html( datastream_updated["current_value"] );
         });
       });
-     
+      function myFunction()
+  {
+    xively.datastream.update(feedID, "Volume", {current_value: "5000"}, function(data){ alert("channel updated");})
+  }
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
     //xively.datastream.update (feedID, maxdepth, data{newmaxdepth});
     //PUT https://api.xively.com/v2/feeds/2022794475.json
-     function myFunction()
-  {
-    xively.datastream.update(feedID, "Volume", {current_value: "5000"}, function(data){ alert("channel updated");})
-  }
+    
     //{"version":"1.0.0",
     //"datastreams":[{
     //"id":"maxdepth",
