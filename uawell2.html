@@ -41,12 +41,8 @@
 				</h5>
 				
 
-				<script>
-				function wellinput() {
-    				document.getElementById("demo").innerHTML = "PARKED";
-				}
-				</script>
-				<p span id="demo"></p>
+				<button onclick="myFunction()">TEST</button>
+    				<p id="demo"></p>
 				<ul>
 					<li>WELL STATUS:&nbsp;&nbsp;<span id="wellstatus"></span></li>
 					<li>FAULTS:&nbsp;&nbsp;<span id="faults"></span></li>
@@ -133,7 +129,10 @@
     });
     //xively.datastream.update (feedID, maxdepth, data{newmaxdepth});
     //PUT https://api.xively.com/v2/feeds/2022794475.json
+     function myFunction()
+  {
     xively.datastream.update(feedID, "dump24", {current_value: "5000"}, function(data){ alert("channel updated");})
+  }
     //{"version":"1.0.0",
     //"datastreams":[{
     //"id":"maxdepth",
