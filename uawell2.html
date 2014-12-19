@@ -134,14 +134,7 @@
          };
 
          // upload the data
-         xively.feed.update(feedID, data, function(response) {
-            if (response.status == "200") {
-               console.log("Yay, it worked!: " + JSON.stringify(response, null, 3));
-            }
-            else {
-               console.log("Boo, something went wrong!: " + JSON.stringify(response, null, 3));
-            }
-         });
+         xively.feed.update(feedID, data);
   
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
