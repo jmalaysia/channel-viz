@@ -75,52 +75,52 @@
       var feedID        = 2022794478          // Feed ID (the last number on the URL on the feed page on Xively)
           
       // Get initial datastream data from Xively
-      //xively.datastream.get (feedID, "Volume", function ( datastream ) {
-       //$(volume).html( datastream["current_value"] );
+      xively.datastream.get (feedID, "Volume", function ( datastream ) {
+      $(volume).html( datastream["current_value"] );
          
         // Realtime datastream update
         xively.datastream.subscribe( feedID, "Volume", function ( event , datastream_updated ) {
          $(volume).html( datastream_updated["current_value"] );
          });
-      //});
-  // xively.datastream.get (feedID, "maxdepth", function ( datastream ) {
-    //    $(maxdepth).html( datastream["current_value"] );
+      });
+   xively.datastream.get (feedID, "maxdepth", function ( datastream ) {
+      $(maxdepth).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "maxdepth", function ( event , datastream_updated ) {
          $(maxdepth).html( datastream_updated["current_value"] );
          
         });
-      //});
-    //xively.datastream.get (feedID, "Total_Oil", function ( datastream ) {
-      //  $(total_oil).html( datastream["current_value"] );
+   });
+   xively.datastream.get (feedID, "Total_Oil", function ( datastream ) {
+     $(total_oil).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "Total_Oil", function ( event , datastream_updated ) {
          $(total_oil).html( datastream_updated["current_value"] );
          
         });
-      //});
-     //xively.datastream.get (feedID, "dailycycles", function ( datastream ) {
-       // $(dailycycles).html( datastream["current_value"] );
+   });
+   xively.datastream.get (feedID, "dailycycles", function ( datastream ) {
+        $(dailycycles).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "dailycycles", function ( event , datastream_updated ) {
          $(dailycycles).html( datastream_updated["current_value"] );
         });
-      //});
-      //xively.datastream.get (feedID, "wellstatus", function ( datastream ) {
-        //$(wellstatus).html( datastream["current_value"] );
+      });
+      xively.datastream.get (feedID, "wellstatus", function ( datastream ) {
+        $(wellstatus).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "wellstatus", function ( event , datastream_updated ) {
          $(wellstatus).html( datastream_updated["current_value"] );
         });
-      //});
-      //xively.datastream.get (feedID, "faults", function ( datastream ) {
-        //$(faults).html( datastream["current_value"] );
+      });
+      xively.datastream.get (feedID, "faults", function ( datastream ) {
+        $(faults).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "faults", function ( event , datastream_updated ) {
          $(faults).html( datastream_updated["current_value"] );
         });
-      //});
-      //xively.datastream.get (feedID, "dump24", function ( datastream ) {
-        //$(dump24).html( datastream["current_value"] );
+      });
+      xively.datastream.get (feedID, "dump24", function ( datastream ) {
+        $(dump24).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, "dump24", function ( event , datastream_updated ) {
          $(dump24).html( datastream_updated["current_value"] );
         });
-      //});
+      });
        // build the data packet
          var timestamp = new Date().toISOString();
          var data = { "version" : "1.0.0",
