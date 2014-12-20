@@ -79,7 +79,7 @@
           
       // Get initial datastream data from Xively
       xively.feed.get (feedID, function ( datastream ) {
-       
+      var obj = $.parseJSON(datastream); 
         $(volume).html( datastream["current_value"] );
         $(depth).html( datastream["current_value"] );
          
