@@ -80,8 +80,8 @@
       // Get initial datastream data from Xively
       xively.feed.get (feedID, function ( datastream ) {
       var obj = $.parseJSON(datastream); 
-        $(volume).html( datastream["current_value"] );
-        $(depth).html( datastream["current_value"] );
+        $(volume).html( obj["current_value"] );
+        $(depth).html( obj["current_value"] );
          
         // Realtime datastream update
         xively.feed.subscribe( feedID, function ( event , datastream_updated ) {
