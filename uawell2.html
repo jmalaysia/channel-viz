@@ -132,7 +132,7 @@
        {
        	var newcycles= document.getElementById("userInput").value;
        	alert(newcycles);
-       }
+       
          var timestamp = new Date().toISOString();
          var data = { "version" : "1.0.0",
             "datastreams" : [
@@ -140,6 +140,7 @@
                { "id" : "dailycycles", "datapoints" : [ {"at" : timestamp, "value" : newcycles} ] }
             ]
          };
+    	}
 
          // upload the data
          xively.feed.update(feedID, data);
