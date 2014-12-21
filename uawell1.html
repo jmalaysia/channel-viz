@@ -51,9 +51,9 @@
 					<li>FAULTS:</li>
 					<li>CYCLES PER DAY:</li>
 					<li>ENTER NEW CYCLES PER DAY:</li>
-					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="depth"></span> Feet</li>
+					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="Depth"></span> Feet</li>
 					<li>ENTER NEW MAX DEPTH:</li>
-					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="volume"></span> Gallons</li>
+					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="Volume"></span> Gallons</li>
 					<li>DUMP VOLUME LAST 24 HOURS:</li>
 					<li>DUMP VOLUME LAST 7 DAYS:</li>
 				</ul>
@@ -79,16 +79,16 @@
           
       // Get initial datastream data from Xively
        xively.datastream.get (feedID, "Volume", function ( datastream ) {
-        $(volume).html( datastream["current_value"] );
+        $(Volume).html( datastream["current_value"] );
       });
         xively.datastream.get (feedID, "Depth", function ( datastream ) {
-        $(depth).html( datastream["current_value"] );
+        $(Depth).html( datastream["current_value"] );
         });
         // Realtime datastream update
         xively.feed.subscribe( feedID, function ( event , datastream_updated ) {
           
-          $(volume).html( datastream_updated["current_value"] );
-          $(depth).html( datastream_updated["current_value"] );
+          $(Volume).html( datastream_updated["current_value"] );
+          $(Depth).html( datastream_updated["current_value"] );
          
         });
       });
