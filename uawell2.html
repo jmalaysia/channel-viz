@@ -125,8 +125,8 @@
          var timestamp = new Date().toISOString();
          var data = { "version" : "1.0.0",
             "datastreams" : [
-               { "id" : "maxdepth", "datapoints" : [ {"at" : timestamp, "value" : 1200} ] },
-               { "id" : "dailycycles", "datapoints" : [ {"at" : timestamp, "value" : 25} ] }
+               { "id" : "maxdepth", "datapoints" : [ {"at" : timestamp, "value" : $newdepth} ] },
+               { "id" : "dailycycles", "datapoints" : [ {"at" : timestamp, "value" : $newcycles} ] }
             ]
          };
 
