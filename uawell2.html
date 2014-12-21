@@ -49,7 +49,7 @@
 					<li>WELL STATUS:&nbsp;&nbsp;<span id="wellstatus"></span></li>
 					<li>FAULTS:&nbsp;&nbsp;<span id="faults"></span></li>
 					<li>CYCLES PER DAY:&nbsp;&nbsp;<span id="dailycycles"></span></li>
-					<li>ENTER NEW CYCLES PER DAY:&nbsp;&nbsp;<input type="text" id="newcycles"><input type="Click to Udpate" onclick="newname()"></li>
+					<li>ENTER NEW CYCLES PER DAY:&nbsp;&nbsp;<input type="text" id="newcycles"><input type="sumbit" onclick="newname()"></li>
 					<li>CURRENT MAX DEPTH:&nbsp;&nbsp;<span id="maxdepth"></span> Feet</li>
 					<li>ENTER NEW MAX DEPTH:&nbsp;&nbsp;<input type="number" name="newdepth" value=""size="1"></input><button id="newdepth">Click to Update</button></li>
 					<li>LAST DUMP VOLUME:&nbsp;&nbsp;<span id="total_oil"></span> Gallons</li>
@@ -125,6 +125,12 @@
         });
       });
        // build the data packet
+       
+       function(newname)
+       {
+       	var newcycles= document.getElementById("userInput");
+       	alert(input);
+       }
          var timestamp = new Date().toISOString();
          var data = { "version" : "1.0.0",
             "datastreams" : [
