@@ -79,19 +79,19 @@
           
       // Get initial datastream data from Xively
        xively.datastream.get (feedID, "Volume", function ( datastream ) {
-        $(Volume).html( datastream["current_value"] );
+        $(volume).html( datastream["current_value"] );
+        xively.datastream.subscribe( feedID, "Volume", function ( event , datastream_updated ) {
+         $(volume).html( datastream_updated["current_value"] );
+        });
       });
         xively.datastream.get (feedID, "Depth", function ( datastream ) {
-        $(Depth).html( datastream["current_value"] );
+        $(depth).html( datastream["current_value"] );
+        xively.datastream.subscribe( feedID, "Depth", function ( event , datastream_updated ) {
+         $(depth).html( datastream_updated["current_value"] );
         });
-        // Realtime datastream update
-        xively.feed.subscribe( feedID, function ( event , datastream_updated ) {
-          
-          $(Volume).html( datastream_updated["current_value"] );
-          $(Depth).html( datastream_updated["current_value"] );
+      }); 
          
-        });
-      });
+       
       // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
   </script>
