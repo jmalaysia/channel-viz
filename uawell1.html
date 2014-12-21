@@ -82,7 +82,7 @@
       var obj = $.parseJSON(datastream); 
         $(volume).html( obj["current_value"] );
         $(depth).html( obj["current_value"] );
-      } 
+      }); 
         // Realtime datastream update
         xively.feed.subscribe( feedID, function ( event , datastream_updated ) {
           
