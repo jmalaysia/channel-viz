@@ -78,11 +78,12 @@
       var feedID        = 2022794478          // Feed ID (the last number on the URL on the feed page on Xively)
           
       // Get initial datastream data from Xively
-      xively.feed.get (feedID, function ( datastream ) {
-      var obj = $.parseJSON(datastream); 
-        $(volume).html( obj["current_value"] );
-        $(depth).html( obj["current_value"] );
-      }); 
+       xively.datastream.get (feedID, "Volume", function ( datastream ) {
+        $(volume).html( datastream["current_value"] );
+      });
+        xively.datastream.get (feedID, "Depth", function ( datastream ) {
+        $(depth).html( datastream["current_value"] );
+        });
         // Realtime datastream update
         xively.feed.subscribe( feedID, function ( event , datastream_updated ) {
           
