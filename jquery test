@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#get_it").click(function(){
+  var the_name = $("#i_am").val();
+    $("#say_it_here").html("<p><font size='4'><b><font face='Georgia'>
+You said that you're</font><i><font color='#FF0000' face='Comic Sans MS'>" + the_name + 
+"</font></i><font face='Georgia'>.  <br>Is that really your name, 
+or did you just make it up?</font></b></font></p>" );
+  });
+});
+</script>
+</head>
+<body>
+<p>Who are you?</p> 
+<p><input type="text" id="i_am" ></p>
+<button id="get_it">That's who I am!</button>
+<p id="say_it_here"></p>
+</body>
+</html>
